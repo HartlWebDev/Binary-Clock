@@ -1,0 +1,69 @@
+body{
+background-color: black;
+
+
+}
+.acounter{
+    color: white;
+}
+.counter{
+ color:gray;
+
+
+
+}
+
+#h1{
+    background-color: gray; }
+#h2{
+    background-color: gray; }
+#h4{
+    background-color: gray; }
+#h8{
+    background-color: gray; } 
+#h16{
+    background-color: gray; } 
+    #h32{
+        background-color: black
+        ; } 
+        
+
+#m1{
+    background-color: gray; }
+#m2{
+    background-color: gray; }
+#m4{
+    background-color: gray; }
+#m8{
+    background-color: gray; } 
+#m16{
+    background-color: gray; }
+#m32{
+    background-color: gray; }
+
+
+#s1{
+    background-color: gray;    }
+#s2{
+    background-color: gray;    }
+#s4{
+    background-color: gray;    }
+#s8{
+    background-color: gray;    } 
+#s16{
+    background-color: gray;    }
+#s32{
+    background-color: gray;    }
+
+.counter{
+    font-size: xxx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline;
+    padding: 5px;
+
+
+}
+#numper{
+    width:50px
+
+}
