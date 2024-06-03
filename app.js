@@ -1,3 +1,5 @@
+window.onload = initializeToCurrentTime;
+
 const eleS1 = document.getElementById("s1");
 const eleS2 = document.getElementById("s2");
 const eleS4 = document.getElementById("s4");
@@ -44,6 +46,10 @@ let countS = 0
 let countM = 0
 let countH = 0
 
+function formatNumber(num) {
+    return num.toString().padStart(2, '0');
+}
+
 function sReset(){
     s1 = true;
     s2 = true;
@@ -51,6 +57,7 @@ function sReset(){
     s8 = true;
     s16 = true;
     s32 = true;
+    countS = 0;
 }
 function mReset(){
     m1 = true;
@@ -59,6 +66,7 @@ function mReset(){
     m8 = true;
     m16 = true;
     m32 = true;
+    countM = 0;
 }
 function hReset(){
     h1 = true;
@@ -66,6 +74,7 @@ function hReset(){
     h4 = true;
     h8 = true;
     h16 = true;
+    countH = 0
 }
 
 
@@ -301,8 +310,13 @@ if(!s32 && !s16 && !s8 && !s4){
         mReset()
         oneUpH()   
     }
-}
+    //let maybezero = ""
 
+    //if(countS < 10){
+    //    maybezero = "0"
+    //}
+}
+    document.getElementById("balls").innerHTML = formatNumber(countH)+ ':'+formatNumber(countM) +  ':' + formatNumber(countS)
 }
 
 
@@ -316,55 +330,94 @@ function countNow(number) {
     for (let i = 0; i < number; i++) {
         setTimeout(inc, i * 1)
     }
-}
-    let on = false
-function show(){
-    if(!on){
-eleS1.style.color = "black";
-eleS2.style.color = "black";
-eleS4.style.color = "black";
-eleS8.style.color = "black";
-eleS16.style.color = "black";
-eleS32.style.color = "black";
-
-eleM1.style.color = "black";
-eleM2.style.color = "black";
-eleM4.style.color = "black";
-eleM8.style.color = "black";
-eleM16.style.color = "black";
-eleM32.style.color = "black";
-
-eleH1.style.color = "black";
-eleH2.style.color = "black";
-eleH4.style.color = "black";
-eleH8.style.color = "black";
-eleH16.style.color = "black";
-on = !on
-document.getElementById("shower").innerHTML = "Hide Numbers"
-    } else {
+} 
     
-        eleS1.style.color = "gray";
-        eleS2.style.color = "gray";
-        eleS4.style.color = "gray";
-        eleS8.style.color = "gray";
-        eleS16.style.color = "gray";
-        eleS32.style.color = "gray";
-        
-        eleM1.style.color = "gray";
-        eleM2.style.color = "gray";
-        eleM4.style.color = "gray";
-        eleM8.style.color = "gray";
-        eleM16.style.color = "gray";
-        eleM32.style.color = "gray";
-        
-        eleH1.style.color = "gray";
-        eleH2.style.color = "gray";
-        eleH4.style.color = "gray";
-        eleH8.style.color = "gray";
-        eleH16.style.color = "gray";
-        on = !on
-        set()
-        document.getElementById("shower").innerHTML = "Show Numbers"
-            } 
-            
+
+
+const SecIn = document.getElementById("scount")
+const MinIn = document.getElementById("mcount")
+const HouIn = document.getElementById("hcount")
+
+setInterval(inc,1000)
+
+function setSec(Sec){
+    sReset()
+    for(i = 0;i<Sec;i++){
+        oneUpS();
+    }
+}
+
+function setMin(Sec){
+    mReset()
+    for(i = 0;i<Sec;i++){
+        oneUpM();
+    }
+}
+
+function setHou(Sec){
+    hReset()
+    for(i = 0;i<Sec;i++){
+        oneUpH();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+function initializeToCurrentTime() {
+    const now = new Date();
+    
+    // Get current hours, minutes, and seconds
+    const currentSeconds = now.getSeconds();
+    const currentMinutes = now.getMinutes();
+    const currentHours = now.getHours();
+    
+    // Reset the states and counters
+    sReset();
+    mReset();
+    hReset();
+    
+    // Set the counters to the current time
+    setSec(currentSeconds+1);
+    setMin(currentMinutes);
+    setHou(currentHours);
+    
+    // Update the display
+    set();
+    CountS();
+    CountM();
+    CountH();
+
+    ToggleDev()
+}
+
+
+let seen = true; // Define seen outside the function to preserve its value
+
+function ToggleDev() {
+    let visibility;
+
+    if (seen) {
+        visibility = "hidden";
+    } else {
+        visibility = "visible";
+    }
+
+    // Get all elements with the class "devtools"
+    const devToolsElements = document.getElementsByClassName("devtools");
+
+    // Loop through the collection and update each element's visibility
+    for (let i = 0; i < devToolsElements.length; i++) {
+        devToolsElements[i].style.visibility = visibility;
+    }
+
+    // Invert the value of the seen variable
+    seen = !seen;
 }

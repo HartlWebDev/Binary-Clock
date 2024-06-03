@@ -1,6 +1,20 @@
+.devtools{
+    visibility: hidden;
+
+}
+.indices{
+display: inline;
+color: white;
+font-size: xxx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline;
+    padding: 5px;
+
+}
+
 body{
 background-color: black;
-font-size: xx-large;
+
 
 }
 .acounter{
@@ -10,6 +24,24 @@ font-size: xx-large;
  color:gray;
 
 
+
+}
+
+#balls{
+    color: white;
+    display: inline;
+    margin: 100px;
+    font-size: xxx-large;
+    
+    
+
+}
+
+#important{
+    color: white;
+    background-color: black;
+    border-color: white;
+    margin-left: 50px;
 
 }
 

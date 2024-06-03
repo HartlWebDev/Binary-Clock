@@ -11,7 +11,8 @@
     <p id="h4" class="counter">4</p>
     <p id="h2" class="counter">2</p>
     <p id="h1" class="counter">1</p>
-
+    <p id="balls">00:00:00</p>
+    <button id="important" onclick="ToggleDev()">DevTools</button>
     <p></p>
 
     <p id="m32" class="counter">32</p>
@@ -30,19 +31,44 @@
     <p id="s4" class="counter">4</p>
     <p id="s2" class="counter">2</p>
     <p id="s1" class="counter">1</p>
+<p></p>
+    <p class="indices">32</p>
+    <p class="indices">16</p>
+    <p class="indices">8</p>
+    <p class="indices">4</p>
+    <p class="indices">2</p>
+    <p class="indices">1</p>
 
-    <p  class="acounter"id="countM">0 Sekunden</p>
-    <p  class="acounter"id="countS">0 Minuten</p>
-    <p  class="acounter"id="countH">0 Stunden</p>
     
 
-    <button onclick="oneUpS()">incrementSec</button>
-    <button onclick="oneUpM()">incrementMin</button>
-    <button onclick="oneUpH()">incrementHour</button>
-    <button onclick="inc()">Inc</button> <p></p>
-    <button onclick="countNow(lol.value)">Durchzaehlen bis -></button>
-    <input type="number" id="numper"> <p></p>
-    <button id="shower" onclick="show()"> Show Numbers</button>
+
+    
+
+
+    <p  class="acounter devtools"id="countH" class="devtools">0 Stunden</p>
+    <p  class="acounter devtools"id="countS" class="devtools">0 Minuten</p>
+    <p  class="acounter devtools"id="countM" class="devtools">0 Sekunden</p>
+    
+    
+
+
+
+    
+    
+
+    <button onclick="oneUpS()" class="devtools">incrementSec</button>
+    <button onclick="oneUpM()" class="devtools">incrementMin</button>
+    <button onclick="oneUpH()" class="devtools">incrementHour</button>
+    <button onclick="inc()" class="devtools">Inc</button> <p></p>
+    <button onclick="countNow(lol.value)" class="devtools">Durchzaehlen bis -></button>
+    <input type="number" id="numper" class="devtools"> <p></p>
+    <button onclick="setSec(SecIn.value)" class="devtools">Set Seconds</button>
+    <input type="number" id="scount" class="devtools">   <p></p>
+    <button onclick="setMin(MinIn.value)" class="devtools">Set Minutes</button>
+    <input type="number" id="mcount" class="devtools">   <p></p>
+    <button onclick="setHou(HouIn.value)" class="devtools">Set Hours  </button>
+    <input type="number" id="hcount" class="devtools">   <p></p>
+    <button onclick="toggleCounter()" id="toggleCounter" class="devtools">Start Counter</button>
  
     <script src="app.js"></script>
 
