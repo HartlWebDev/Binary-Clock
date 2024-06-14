@@ -1,5 +1,7 @@
 window.onload = initializeToCurrentTime;
 
+let startTime = new Date();
+
 const eleS1 = document.getElementById("s1");
 const eleS2 = document.getElementById("s2");
 const eleS4 = document.getElementById("s4");
@@ -338,7 +340,7 @@ const SecIn = document.getElementById("scount")
 const MinIn = document.getElementById("mcount")
 const HouIn = document.getElementById("hcount")
 
-setInterval(inc,1000)
+
 
 function setSec(Sec){
     sReset()
@@ -421,3 +423,9 @@ function ToggleDev() {
     // Invert the value of the seen variable
     seen = !seen;
 }
+let endTime = new Date()
+
+let runtime = endTime - startTime;
+
+
+setInterval(inc,1000-runtime)
